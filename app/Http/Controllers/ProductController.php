@@ -26,7 +26,7 @@ class ProductController extends Controller
         })->with('variants')->latest()->paginate($perPage, ['*'], 'page', $page);
 
         return response()->json([
-            $products,
+            'data' => $products,
         ], Response::HTTP_OK);
     }
 
