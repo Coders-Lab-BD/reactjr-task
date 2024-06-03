@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Variant;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -46,7 +45,6 @@ class ProductController extends Controller
             'variants.*.specification' => ['required', 'string'],
             'variants.*.size' => ['required', 'string', 'in:small,medium,large'],
         ]);
-        
 
         DB::beginTransaction();
         try {
@@ -107,7 +105,6 @@ class ProductController extends Controller
             'variants.*.specification' => ['required', 'string'],
             'variants.*.size' => ['required', 'string', 'in:small,medium,large'],
         ]);
-        
 
         DB::beginTransaction();
         try {
